@@ -1,7 +1,7 @@
 import React from 'react'
-import Gr from "./Gr";
+import TempGr from "./TempGr";
 export default function WheatherDetail() {
   return (
-    <Gr/>
+    <TempGr/>
   )
 }
