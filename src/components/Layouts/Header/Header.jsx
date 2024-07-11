@@ -1,12 +1,16 @@
 import React from 'react'
 
 import Input from './Input';
+import Dropdown from './Dropdown';
+
 export default function Header() {
   return (
-    <header className="container flex justify-between items-center py-5">
+    <header className="bg-blue-50">
+      <div className="container flex justify-between items-center py-8">
         <h1 className="text-xl font-medium">Wheather App</h1>
         <Input />
-        <button className="w-[30px] h-[30px] bg-black"></button>
+        <Dropdown/>
+      </div>
     </header>
   )
 }

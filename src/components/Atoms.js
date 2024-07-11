@@ -8,7 +8,9 @@ export const wheatherState = atom(
 export const currentWheather = selector({
     key: 'currentWheather',
     get: async () => {
+        // `api.openweathermap.org/data/2.5/forecast/daily?lat=51.5073219&lon=-0.1276474&cnt=16&appid=5635144112231f19fc2e1215464c4afd&units=metric`
         const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=51.5073219&lon=-0.1276474&appid=5635144112231f19fc2e1215464c4afd&units=metric`)
+        // const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast/daily?lat=51.5073219&lon=-0.1276474&cnt=16&appid=5635144112231f19fc2e1215464c4afd&units=metric`)
         const wheather =  await response.json()
         return [wheather]
     },

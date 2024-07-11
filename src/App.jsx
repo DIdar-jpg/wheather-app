@@ -1,6 +1,6 @@
-import Header from './components/Layouts/Header.jsx';
-import Input from './components/Layouts/Input.jsx';
-import CardWrap from './components/WheatherCard/CardWrap.jsx';
+import Header from './components/Layouts/Header/Header.jsx';
+import Footer from './components/Layouts/Footer/Footer.jsx';
+import WheatherCard from './components/WheatherCard.jsx';
 import { RecoilRoot } from 'recoil';
 import { Suspense } from 'react';
 import WheatherDetail from './components/WheatherDetail.jsx';
@@ -13,8 +13,11 @@ function App() {
       <RecoilRoot>
         <Suspense fallback={<div>Загрузка...</div>}>
           <Header/>
-          <CardWrap/>
-          <WheatherDetail/>
+          <main className='container'>
+            <WheatherCard/>
+            <WheatherDetail/>
+          </main>
+          <Footer/>
         </Suspense>
       </RecoilRoot>
 

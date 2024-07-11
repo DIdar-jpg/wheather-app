@@ -1,7 +1,11 @@
 import React from 'react'
-import TempGr from "./TempGr";
+import TempChart from "./TempChart";
+import DaysForcast from './DaysForcast/DaysForcast';
 export default function WheatherDetail() {
   return (
-    <TempGr/>
+    <section className='lg:flex justify-between'>
+      <TempChart/>
+      <DaysForcast/>
+    </section>
   )
 }
