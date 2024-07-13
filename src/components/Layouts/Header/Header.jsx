@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="bg-blue-50">
       <div className="container flex justify-between items-center py-8">
-        <h1 className="text-xl font-medium">Wheather App</h1>
+        <h1 className="hidden sm:inline text-xl font-medium">Wheather App</h1>
         <Input />
         <Dropdown/>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { currentWheather } from './atoms.js';
+import { currentWheather } from './Atoms.js';
 import { useRecoilValue } from 'recoil';
 import { WiDayCloudy } from "react-icons/wi";
 import { IconContext } from "react-icons";

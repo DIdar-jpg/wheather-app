@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 import { useRecoilValue } from 'recoil';
-import { currentWheather } from './atoms';
+import { currentWheather } from './Atoms.js';
 
 export default function TempChart(){
   const wheatherArr = useRecoilValue(currentWheather)
@@ -31,7 +31,7 @@ export default function TempChart(){
   return (
     <>
       {/* <h2 className="text-2xl mb-5 font-medium">Temprature Chart</h2> */}
-      <div className="temp-chart mb-6 w-full h-[200px] overflow-x-scroll whitespace-nowrap lg:h-auto lg:w-[55%] lg:mb-0 xl:w-[65%]">
+      <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[65%]">
         <h2 className="text-2xl mb-5 font-medium">Temprature Chart</h2>
         <Line
           type="line"
