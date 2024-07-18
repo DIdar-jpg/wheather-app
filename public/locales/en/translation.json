@@ -1,0 +1,9 @@
+{
+    "input_text": "Enter city name",
+    "feels_like": "Feels like",
+    "humidity": "Humidity",
+    "clouds": "Clouds",
+    "min_temp": "Min Temp",
+    "visibility": "Visibility"
+
+}

@@ -1,10 +1,15 @@
 import React from 'react'
+
 import { currentWheather } from './Atoms.js';
 import { useRecoilValue } from 'recoil';
 import { WiDayCloudy } from "react-icons/wi";
 import { IconContext } from "react-icons";
 
+import { useTranslation } from 'react-i18next'
+
 export default function WheatherCard() {
+    const [ t, i18n ] = useTranslation()
+
     const cardData = useRecoilValue(currentWheather)
     console.log(cardData);
     return (   
@@ -24,7 +29,7 @@ export default function WheatherCard() {
                                             </div>
                                             <div className='text-2xl font-bold uppercase mb-2'>{item.city.name}, {item.city.country}</div>
                                         </div>
-                                        <div className="text-sm font-bold mb-5">Feels like {item.list[0].main.feels_like}°C. {item.list[0].weather[0].description}.</div>
+                                        <div className="text-sm font-bold mb-5">{t("feels_like")} {item.list[0].main.feels_like}°C. {item.list[0].weather[0].description}.</div>
         
                                         <div className="flex flex-row justify-between xl:flex-col">
                                             <div className="flex flex-nowraps items-center items-start xl:w-full">
@@ -50,10 +55,10 @@ export default function WheatherCard() {
                                                     })()}
                                                 </li>
                                                 <li className=''>&hearts; {item.list[0].main.pressure}hPa</li>
-                                                <li className=''><span className='xl:font-medium'>Humidity: </span>{item.list[0].main.humidity}%</li>
-                                                <li className=''><span className='xl:font-medium'>Сlouds: </span>{item.list[0].clouds.all}%</li>
-                                                <li className=''><span className='xl:font-medium'>Min Temp: </span>{item.list[0].main.temp_min}°C</li>
-                                                <li className=''><span className='xl:font-medium'>Visibility: </span>{item.list[0].visibility /1000}km</li>
+                                                <li className=''><span className='xl:font-medium'>{t("humidity")}: </span>{item.list[0].main.humidity}%</li>
+                                                <li className=''><span className='xl:font-medium'>{t("clouds")}: </span>{item.list[0].clouds.all}%</li>
+                                                <li className=''><span className='xl:font-medium'>{t("min_temp")}: </span>{item.list[0].main.temp_min}°C</li>
+                                                <li className=''><span className='xl:font-medium'>{t("visibility")}: </span>{item.list[0].visibility /1000}km</li>
                                             </ul>
                                         </div> 
                                     </div>

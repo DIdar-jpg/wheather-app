@@ -24,8 +24,12 @@ export default function DaysForcast() {
 
             return {
                 time: (() => {
-                    const dateElement = new Date(weatherItem[1].dt * 1000) 
-                    return `${dateElement.toLocaleString('en', {weekday: 'short'})}, ${dateElement.toLocaleString('en', {month: 'short'})} ${dateElement.toLocaleString('en', {day: 'numeric'})}`
+                    // if (weatherItem[1].dt) {
+                    //     const dateElement = new Date(weatherItem[1].dt * 1000) 
+                    //     return `${dateElement.toLocaleString('en', {weekday: 'short'})}, ${dateElement.toLocaleString('en', {month: 'short'})} ${dateElement.toLocaleString('en', {day: 'numeric'})}`
+                    // } else{
+                    //     return ' '
+                    // }
                 })(),
                 minTemp: Math.round(weatherItem.reduce((min, currentValue) => Math.min(min, currentValue.main.temp), +Infinity)),
                 maxTemp: Math.round(weatherItem.reduce((max, currentValue) => Math.max(max, currentValue.main.temp), -Infinity)),
@@ -46,7 +50,7 @@ export default function DaysForcast() {
         )
     }
     return (
-        <div className="md:w-[33%]">
+        <div className="lg:w-[35%]">
 
             <h2 className="text-2xl font-bold mb-5">{dayWeather(weatherArr).length}-days forecast</h2>
             <div className="grid  grid-cols-1 gap-2">
