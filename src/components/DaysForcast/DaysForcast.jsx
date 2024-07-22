@@ -4,8 +4,14 @@ import { currentWheather } from '../Atoms';
 import { WiShowers, WiDaySunny, WiCloudy } from "react-icons/wi";
 import { IconContext } from "react-icons";
 
+import { useTranslation } from 'react-i18next'
+
 import './DaysForcast.css'
+
 export default function DaysForcast() {
+
+    const [ t ] = useTranslation()
+
     const weatherArr = useRecoilValue(currentWheather)[0].list
     const dayWeather = weatherData => {
         let dates = weatherData.map( item => new Date(item.dt * 1000).getDate())
@@ -52,7 +58,7 @@ export default function DaysForcast() {
     return (
         <div className="lg:w-[35%]">
 
-            <h2 className="text-2xl font-bold mb-5">{dayWeather(weatherArr).length}-days forecast</h2>
+            <h2 className="text-2xl font-bold mb-5">{dayWeather(weatherArr).length}-{t('days_frt')}</h2>
             <div className="grid  grid-cols-1 gap-2">
             {dayWeather(weatherArr).map( item => {
                 const wType = item.weatherDescription

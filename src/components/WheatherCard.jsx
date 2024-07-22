@@ -8,7 +8,8 @@ import { IconContext } from "react-icons";
 import { useTranslation } from 'react-i18next'
 
 export default function WheatherCard() {
-    const [ t, i18n ] = useTranslation()
+    
+    const [ t ] = useTranslation()
 
     const cardData = useRecoilValue(currentWheather)
     console.log(cardData);
@@ -38,7 +39,7 @@ export default function WheatherCard() {
                                                 </IconContext.Provider>
                                                 <span className='text-4xl ml-2 sm:text-3xl sm:ml-0 md:text-4xl lg:text-6xl'>{item.list[0].main.temp}&deg;C</span>
                                             </div>
-                                            <div className="text-2xl font-bold mt-3 hidden xl:block">Feels like {item.list[0].main.feels_like}°C. {item.list[0].weather[0].description}.</div>
+                                            {/* <div className="text-2xl font-bold mt-3 hidden xl:block">Feels like {item.list[0].main.feels_like}°C. {item.list[0].weather[0].description}.</div> */}
                                             <ul className='max-w-[400px] gap-4 pl-5 border-l border-blue-400 
                                             xl:max-w-[100%] xl:w-full xl:grid xl:grid-cols-2 xl:text-2xl xl:mt-5 xl:border-l-2'>
                                                 <li className=''>&#10148; {item.list[0].wind.speed}m/s 

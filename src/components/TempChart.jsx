@@ -5,7 +5,12 @@ import Chart from 'chart.js/auto';
 import { useRecoilValue } from 'recoil';
 import { currentWheather } from './Atoms.js';
 
+import { useTranslation } from 'react-i18next'
+
 export default function TempChart(){
+
+  const [ t ] = useTranslation()
+
   const wheatherArr = useRecoilValue(currentWheather)
   const [ windowSize, SetSize ] = useState(window.innerWidth )
   const tempData = wheatherArr[0].list.slice(0,30).map(item => {
@@ -32,7 +37,7 @@ export default function TempChart(){
     <>
       {/* <h2 className="text-2xl mb-5 font-medium">Temprature Chart</h2> */}
       <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[65%]">
-        <h2 className="text-2xl mb-5 font-medium">Temprature Chart</h2>
+        <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
         <Line
           type="line"
           options={{

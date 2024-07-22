@@ -3,7 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Input() {
-  const [ t, i18n ] = useTranslation()
+  const [ t ] = useTranslation()
 
   return (
         <div className="relative w-3/4 sm:w-80">

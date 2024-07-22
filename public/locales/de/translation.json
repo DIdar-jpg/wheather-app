@@ -4,5 +4,12 @@
     "humidity": "Feuchtigkeit",
     "clouds": "Wolken",
     "min_temp": "Min Temp",
-    "visibility": "Sichtweite"
+    "visibility": "Sichtweite",
+
+    "temp_chart": "Temperaturdiagramm",
+    "days_frt": "Tage-Vorhersage",
+
+    "keep_in_touch": "Lass uns in Kontakt bleiben!",
+    "find_me": "Finden Sie mich auf einer dieser Plattformen. Ich antworte innerhalb von 1–2 Werktagen."
+
 }
