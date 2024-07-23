@@ -1,5 +1,7 @@
 {
     "input_text": "Enter city name",
+    "search": "Search",
+
     "feels_like": "Feels like",
     "humidity": "Humidity",
     "clouds": "Clouds",

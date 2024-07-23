@@ -8,14 +8,13 @@ import { IconContext } from "react-icons";
 import { useTranslation } from 'react-i18next'
 
 export default function WheatherCard() {
-    
     const [ t ] = useTranslation()
 
     const cardData = useRecoilValue(currentWheather)
-    console.log(cardData);
+
     return (   
         <section className="">
-            {cardData != null ? cardData.map(
+            {cardData.map(
                 item => {
                     // Убери ссылку из кода и сделай envoriment vars
                     const mapUrl = `https://yandex.ru/map-widget/v1/?ll=${item.city.coord.lon}%2C${item.city.coord.lat}&z=8.0`
@@ -72,7 +71,7 @@ export default function WheatherCard() {
                         </div>
                     )
                 }
-            ) : null}
+            )}
         </section>
     )
 }
