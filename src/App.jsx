@@ -1,28 +1,27 @@
 import Header from './components/Layouts/Header/Header.jsx';
 import Footer from './components/Layouts/Footer/Footer.jsx';
 import WheatherCard from './components/WheatherCard.jsx';
-import { RecoilRoot } from 'recoil';
-import { Suspense } from 'react';
 import WheatherDetail from './components/WheatherDetail.jsx';
 
-
+import { UseWeather } from './hooks/UseWeather.js'
 
 function App() {
+
+  const { data } = UseWeather()
+
   return (
     <>
-      <RecoilRoot>
-        <Suspense fallback={<div>Загрузка...</div>}>
-          <Header/>
+      <Header/>
+      {
+        data ? 
           <main className='container'>
-            <WheatherCard/>
+            <WheatherCard weather={data}/>
             <WheatherDetail/>
           </main>
-          <Footer/>
-        </Suspense>
-      </RecoilRoot>
-
+        : null 
+      }
+      <Footer/>
     </>
   );
 }
-
 export default App;

@@ -2,18 +2,19 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
-import { useRecoilValue } from 'recoil';
-import { currentWheather } from './Atoms.js';
 
 import { useTranslation } from 'react-i18next'
+import { UseWeather } from '../hooks/UseWeather.js'
 
 export default function TempChart(){
 
   const [ t ] = useTranslation()
 
-  const wheatherArr = useRecoilValue(currentWheather)
+  const { data } = UseWeather()
+
   const [ windowSize, SetSize ] = useState(window.innerWidth )
-  const tempData = wheatherArr[0].list.slice(0,30).map(item => {
+
+  const tempData = data.list.slice(0,30).map(item => {
     return {
       temp: item.main.temp,
       time: +(item.dt_txt[11] + item.dt_txt[12]) > 9 ? `${item.dt_txt[11]}${item.dt_txt[12]}` : item.dt_txt[12]
@@ -35,7 +36,6 @@ export default function TempChart(){
 
   return (
     <>
-      {/* <h2 className="text-2xl mb-5 font-medium">Temprature Chart</h2> */}
       <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[65%]">
         <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
         <Line

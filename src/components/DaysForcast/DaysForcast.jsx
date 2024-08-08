@@ -1,18 +1,25 @@
 import React from 'react'
-import { useRecoilValue } from 'recoil';
-import { currentWheather } from '../Atoms';
+
+// import { useRecoilValue } from 'recoil';
+// import { settlementState } from '../Atoms.js'
 import { WiShowers, WiDaySunny, WiCloudy } from "react-icons/wi";
 import { IconContext } from "react-icons";
 
 import { useTranslation } from 'react-i18next'
+import { UseWeather } from '../../hooks/UseWeather.js';
+
+
 
 import './DaysForcast.css'
 
 export default function DaysForcast() {
 
     const [ t ] = useTranslation()
+    
+    const { data } = UseWeather()
 
-    const weatherArr = useRecoilValue(currentWheather)[0].list
+    const weatherArr =  data.list
+    
     const dayWeather = weatherData => {
         let dates = weatherData.map( item => new Date(item.dt * 1000).getDate())
         // get an array with dates
@@ -30,12 +37,12 @@ export default function DaysForcast() {
 
             return {
                 time: (() => {
-                    // if (weatherItem[1].dt) {
-                    //     const dateElement = new Date(weatherItem[1].dt * 1000) 
-                    //     return `${dateElement.toLocaleString('en', {weekday: 'short'})}, ${dateElement.toLocaleString('en', {month: 'short'})} ${dateElement.toLocaleString('en', {day: 'numeric'})}`
-                    // } else{
-                    //     return ' '
-                    // }
+                    if (weatherItem[1].dt) {
+                        const dateElement = new Date(weatherItem[1].dt * 1000) 
+                        return `${dateElement.toLocaleString('en', {weekday: 'short'})}, ${dateElement.toLocaleString('en', {month: 'short'})} ${dateElement.toLocaleString('en', {day: 'numeric'})}`
+                    } else{
+                        return ' '
+                    }
                 })(),
                 minTemp: Math.round(weatherItem.reduce((min, currentValue) => Math.min(min, currentValue.main.temp), +Infinity)),
                 maxTemp: Math.round(weatherItem.reduce((max, currentValue) => Math.max(max, currentValue.main.temp), -Infinity)),

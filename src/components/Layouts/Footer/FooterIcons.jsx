@@ -8,17 +8,18 @@ import {
     FaWhatsapp, 
 } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+
 export default function FooterIcons() {
     const icons = [
-        <FaTelegramPlane />,
-        <FaLinkedinIn />,
-        <FaInstagram />, 
-        <FaWhatsapp />, 
-        <BiLogoGmail />
+        {icon: <FaTelegramPlane />, key:'telegram'},
+        {icon: <FaLinkedinIn />, key:'linkedIn'},
+        {icon: <FaInstagram />, key:'instagram'}, 
+        {icon: <FaWhatsapp />, key:'whatsUp'}, 
+        {icon: <BiLogoGmail />, key:'gmail'}
     ]
     return (
-    <div class="middle">
-        {icons.map( icon => <div class="btn">{icon}</div>)}
-    </div>
+        <div className="middle">
+            {icons.map( item => <div className="btn" key={item.key}>{item.icon}</div>)}
+        </div>
     )
 }

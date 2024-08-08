@@ -5,7 +5,7 @@ export default function WheatherDetail() {
   return (
     <section className='lg:flex justify-between'>
       <TempChart/>
-      <DaysForcast/>
+      {/* <DaysForcast/> */}
     </section>
   )
 }
