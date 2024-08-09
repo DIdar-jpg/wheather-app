@@ -20,6 +20,12 @@ export function UseWeather(){
         
         enabled: !!settetState,
         // устанавливает условие для запроса
+
+        refetchOnWindowFocus: false,
+        // устанавливает будет ли reactQuery делать refetch когда окно браузера сново получает фокус
+        
+        staleTime: 1000 * 60 * 30
+        // Устанавливаем время за которое будет происходить refetch
       })
     
     useEffect( () => { 
