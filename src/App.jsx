@@ -1,6 +1,6 @@
 import Header from './components/Layouts/Header/Header.jsx';
 import Footer from './components/Layouts/Footer/Footer.jsx';
-import WheatherCard from './components/WheatherCard.jsx';
+import WheatherCard from './components/WeatherCard/WeatherCard.jsx';
 import WheatherDetail from './components/WheatherDetail.jsx';
 
 import { UseWeather } from './hooks/UseWeather.js'

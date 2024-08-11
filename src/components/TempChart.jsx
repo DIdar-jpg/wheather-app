@@ -20,6 +20,7 @@ export default function TempChart(){
       time: +(item.dt_txt[11] + item.dt_txt[12]) > 9 ? `${item.dt_txt[11]}${item.dt_txt[12]}` : item.dt_txt[12]
     }
   })
+
   const lineChartData = {
     labels: tempData.map( item =>  item.time > 12 ? item.time + 'pm' : item.time + 'am'),
     datasets: [
@@ -32,7 +33,11 @@ export default function TempChart(){
       },
     ]
   };
-  useEffect( () => {window.addEventListener('resize', () => { SetSize(window.innerWidth )})})
+
+  useEffect( () => {window.addEventListener('resize', () => { 
+    SetSize(window.innerWidth )
+    console.log('isResized')
+  })})
 
   return (
     <>

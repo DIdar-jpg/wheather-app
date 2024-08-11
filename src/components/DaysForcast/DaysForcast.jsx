@@ -1,14 +1,12 @@
 import React from 'react'
 
-// import { useRecoilValue } from 'recoil';
-// import { settlementState } from '../Atoms.js'
 import { WiShowers, WiDaySunny, WiCloudy } from "react-icons/wi";
-import { IconContext } from "react-icons";
 
 import { useTranslation } from 'react-i18next'
 import { UseWeather } from '../../hooks/UseWeather.js';
 
-
+import { dayWeather } from './dayWeather.js'
+import  { WeatherIcon }  from './weatherIcon.jsx'
 
 import './DaysForcast.css'
 
@@ -17,65 +15,23 @@ export default function DaysForcast() {
     const [ t ] = useTranslation()
     
     const { data } = UseWeather()
-
-    const weatherArr =  data.list
     
-    const dayWeather = weatherData => {
-        let dates = weatherData.map( item => new Date(item.dt * 1000).getDate())
-        // get an array with dates
-        dates = dates.filter((item, index, arr) => arr.indexOf(item) === index)
-        // remove duplicate elements
-        return dates.map( item => {
-            const weatherItem = weatherData.filter( element => new Date(element.dt * 1000).getDate() === item)
-            // filter arr by dates
-            const getWeatherType = weatherItem => {
-                const hasRain = weatherItem.filter( item => item.rain).length > 0 ? 'Rain' : false
-                let clouds = weatherItem.map( item => item.clouds.all).reduce( (acc, item) => acc += item, 0) / weatherItem.length
-                clouds = clouds < 30 ? 'Clear sky' : 'Clouds'
-                return hasRain ? `${clouds}/${hasRain}` : `${clouds}`
-            }
+    const dayWeatherResult = dayWeather(data.list)
 
-            return {
-                time: (() => {
-                    if (weatherItem[1].dt) {
-                        const dateElement = new Date(weatherItem[1].dt * 1000) 
-                        return `${dateElement.toLocaleString('en', {weekday: 'short'})}, ${dateElement.toLocaleString('en', {month: 'short'})} ${dateElement.toLocaleString('en', {day: 'numeric'})}`
-                    } else{
-                        return ' '
-                    }
-                })(),
-                minTemp: Math.round(weatherItem.reduce((min, currentValue) => Math.min(min, currentValue.main.temp), +Infinity)),
-                maxTemp: Math.round(weatherItem.reduce((max, currentValue) => Math.max(max, currentValue.main.temp), -Infinity)),
-                weatherDescription: getWeatherType(weatherItem)
-            }
-        })
-    }
-
-    const weatherIcon = (icon, temp_min, temp_max) => {
-
-        return(
-            <span className='flex items-center justify-center text-center'>
-                <IconContext.Provider value={{ size: '35px' }}>
-                    {icon}
-                </IconContext.Provider>
-                {temp_max} / {temp_min}°C
-            </span>
-        )
-    }
     return (
         <div className="lg:w-[35%]">
 
-            <h2 className="text-2xl font-bold mb-5">{dayWeather(weatherArr).length}-{t('days_frt')}</h2>
+            <h2 className="text-2xl font-bold mb-5">{dayWeatherResult.length}-{t('days_frt')}</h2>
             <div className="grid  grid-cols-1 gap-2">
-            {dayWeather(weatherArr).map( item => {
+            {dayWeatherResult.map( item => {
                 const wType = item.weatherDescription
                 return(
                     <div className='day-weather grid grid-rows-1 grid-cols-3 items-center text-base duration-200 p-2 md:py-2 md:px-3 rounded-md hover:text-lg hover:bg-blue-50'>
                         <span>{item.time}</span>
                         {(() => {
-                            if(wType === 'Clouds') return weatherIcon(<WiCloudy className='cloud'/>, item.minTemp, item.maxTemp)
-                            else if(wType === 'Clear sky') return weatherIcon(<WiDaySunny className='sunny'/>, item.minTemp, item.maxTemp)
-                            else if(wType === 'Clouds/Rain') return weatherIcon(<WiShowers className='rain'/>, item.minTemp, item.maxTemp)
+                            if(wType === 'Clouds') return <WeatherIcon iconProp={ {icon: <WiCloudy className='cloud'/>,  temp_min: item.minTemp, temp_max:item.maxTemp} }/>
+                            if(wType === 'Clear sky') return <WeatherIcon iconProp={ {icon: <WiDaySunny className='sunny'/>,  temp_min: item.minTemp, temp_max:item.maxTemp} }/>
+                            if(wType === 'Clouds/Rain') return <WeatherIcon iconProp={ {icon: <WiShowers className='rain'/>,  temp_min: item.minTemp, temp_max:item.maxTemp} }/>
                         })()}
                         <span className='text-right'>
                             {wType}

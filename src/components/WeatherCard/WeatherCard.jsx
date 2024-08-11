@@ -5,6 +5,8 @@ import { IconContext } from "react-icons";
 
 import { useTranslation } from 'react-i18next'
 
+import { getWindDirection } from './getWindDirection.js'
+
 export default function WheatherCard({ weather }) {
 
     const currWeather = weather.list[0]
@@ -38,19 +40,7 @@ export default function WheatherCard({ weather }) {
                                 {/* <div className="text-2xl font-bold mt-3 hidden xl:block">Feels like {currWeather.main.feels_like}°C. {currWeather.weather[0].description}.</div> */}
                                 <ul className='max-w-[400px] gap-4 pl-5 border-l border-blue-400 
                                 xl:max-w-[100%] xl:w-full xl:grid xl:grid-cols-2 xl:text-2xl xl:mt-5 xl:border-l-2'>
-                                    <li className=''>&#10148; {currWeather.wind.speed}m/s 
-                                        {(() => { 
-                                            if (currWeather.wind.deg >= 0 && currWeather.wind.deg <= 30) return ' N' 
-                                            else if (currWeather.wind.deg > 30 && currWeather.wind.deg <= 60) return ' NE' 
-                                            else if (currWeather.wind.deg > 60 && currWeather.wind.deg <= 120) return ' E' 
-                                            else if (currWeather.wind.deg > 160 && currWeather.wind.deg <= 150) return ' SE' 
-                                            else if (currWeather.wind.deg > 150 && currWeather.wind.deg <= 210) return ' S' 
-                                            else if (currWeather.wind.deg > 210 && currWeather.wind.deg <= 240) return ' SW'
-                                            else if (currWeather.wind.deg > 240 && currWeather.wind.deg <= 300) return ' W'
-                                            else if (currWeather.wind.deg > 300 && currWeather.wind.deg <= 330) return ' NW'
-                                            else if (currWeather.wind.deg > 330 && currWeather.wind.deg <= 360) return ' N'
-                                        })()}
-                                    </li>
+                                    <li className=''>&#10148; {currWeather.wind.speed}m/s {getWindDirection(currWeather.wind.deg)}</li>
                                     <li className=''>&hearts; {currWeather.main.pressure}hPa</li>
                                     <li className=''><span className='xl:font-medium'>{t("humidity")}: </span>{currWeather.main.humidity}%</li>
                                     <li className=''><span className='xl:font-medium'>{t("clouds")}: </span>{currWeather.clouds.all}%</li>
