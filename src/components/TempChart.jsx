@@ -41,7 +41,7 @@ export default function TempChart(){
 
   return (
     <>
-      <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[65%]">
+      <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[58%]">
         <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
         <Line
           type="line"

@@ -19,7 +19,7 @@ export default function DaysForcast() {
     const dayWeatherResult = dayWeather(data.list)
 
     return (
-        <div className="lg:w-[35%]">
+        <div className="lg:w-[40%]">
 
             <h2 className="text-2xl font-bold mb-5">{dayWeatherResult.length}-{t('days_frt')}</h2>
             <div className="grid  grid-cols-1 gap-2">
