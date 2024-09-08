@@ -11,7 +11,6 @@ export default function Input() {
   const [ settetState, setSettleState ] = useRecoilState(settlementState)
   
   const changeSettlement = () => { 
-    console.log('aqaaa')
     const location = document.getElementById('settlement-input').value
     setSettleState(location)
   }

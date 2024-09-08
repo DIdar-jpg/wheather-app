@@ -5,7 +5,6 @@ import App from './App.jsx'
 import reportWebVitals from './reportWebVitals'
 // Recoil
 import { RecoilRoot } from 'recoil'
-import { Suspense } from 'react'
 // Translation
 import './18n.js'
 // react-query
@@ -17,14 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient()
 
 root.render(
-  <Suspense fallback={<div>Загрузка...</div>}>
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <App />
       </RecoilRoot>
     <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  </Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function

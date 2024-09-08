@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect } from "react"
+import { Suspense } from 'react'
 import { useQuery } from "react-query"
 import { useRecoilState } from 'recoil'
 import { settlementState } from '../components/Atoms'
@@ -8,7 +9,7 @@ export function UseWeather(){
 
     const [ settetState ] = useRecoilState(settlementState)
      
-    const { data, error, isLoading, isSuccess, isError, refetch } = useQuery({
+    const { data, error, isFetching, isLoading, isSuccess, isError, refetch } = useQuery({
         queryKey: 'posts',
         queryFn: () => {
           return axios.get(process.env.REACT_APP_SETTLEMENT_URL, { params: { 'q':settetState, 'appid':process.env.REACT_APP_WEATHER_APIKEY }})
@@ -28,6 +29,11 @@ export function UseWeather(){
         // Устанавливаем время за которое будет происходить refetch
       })
     
+    // useEffect( () => { 
+    //   if (isFetching)  {<Suspense fallback={<div>Загрузка...</div>}></Suspense>}
+    // }, [isFetching])
+
+
     useEffect( () => { 
       if (isSuccess) console.log('Data fetched successefuly!')
     }, [isSuccess,data])
