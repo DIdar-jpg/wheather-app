@@ -7,10 +7,18 @@ import {
     FaInstagram, 
     FaWhatsapp, 
 } from "react-icons/fa";
+
 import { BiLogoGmail } from "react-icons/bi";
 
-export default function FooterIcons() {
-    const icons = [
+const FooterIcons : React.FC = () => {
+
+    interface IconData {
+        icon: JSX.Element;
+        key: string;
+        url: string | undefined; // так как process.env может вернуть undefined
+    }
+
+    const icons : IconData[] = [
         {
             icon: <FaTelegramPlane />,
             key:'telegram',
@@ -39,7 +47,15 @@ export default function FooterIcons() {
     ]
     return (
         <div className="middle">
-            {icons.map( item => <a href={item.url} className="btn" key={item.key}>{item.icon}</a>)}
+            {icons.map( item => 
+                item.url && (
+                    <a href={item.url} className="btn" key={item.key}>
+                        {item.icon}
+                    </a>
+                )
+            )}
         </div>
     )
 }
+
+export default FooterIcons

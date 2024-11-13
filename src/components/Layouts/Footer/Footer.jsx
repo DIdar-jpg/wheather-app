@@ -1,6 +1,6 @@
 import React from 'react'
 
-import FooterIcons from './FooterIcons'
+import FooterIcons from './FooterIcons.tsx'
 
 import { useTranslation } from 'react-i18next'
 
