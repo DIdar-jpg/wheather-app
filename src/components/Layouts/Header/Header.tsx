@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Input from './Input';
+import Input from './Input.tsx';
 import Dropdown from './Dropdown.tsx';
 
 const Header : React.FC = () => {

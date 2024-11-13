@@ -2,16 +2,16 @@ import React from 'react'
 
 import { useTranslation } from 'react-i18next'
 import { useRecoilState } from 'recoil';
-
 import { settlementState } from '../../Atoms.js'
 
-export default function Input() {
-  const [ t ] = useTranslation()
+const Input: React.FC = () => {
 
-  const [ settetState, setSettleState ] = useRecoilState(settlementState)
+  const { t } = useTranslation()
+
+  const [ settetState, setSettleState ] = useRecoilState<string>(settlementState)
   
-  const changeSettlement = () => { 
-    const location = document.getElementById('settlement-input').value
+  const changeSettlement = () : void => { 
+    const location = (document.getElementById('settlement-input') as HTMLInputElement).value
     setSettleState(location)
   }
 
@@ -28,3 +28,4 @@ export default function Input() {
         </div>
   )
 }
+export default Input;
