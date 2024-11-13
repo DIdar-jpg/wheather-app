@@ -1,4 +1,4 @@
-import Header from './components/Layouts/Header/Header.jsx';
+import Header from './components/Layouts/Header/Header.tsx';
 import Footer from './components/Layouts/Footer/Footer.jsx';
 import WheatherCard from './components/WeatherCard/WeatherCard.jsx';
 import WheatherDetail from './components/WheatherDetail.jsx';
@@ -9,7 +9,7 @@ import { UseWeather } from './hooks/UseWeather.js'
 function App() {
 
   const { data, isLoading, isSuccess, isError, error } = UseWeather()
-  // console.log(data)
+  console.log(data)
   const testFunc = () => { 
     if (isLoading) {
       return <div>Loading</div>
@@ -25,7 +25,6 @@ function App() {
                 <WheatherDetail/>
               </main>
             : null
-
           }
           <Footer/>
         </>

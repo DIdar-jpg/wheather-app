@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Input from './Input';
-import Dropdown from './Dropdown';
+import Dropdown from './Dropdown.tsx';
 
-export default function Header() {
+const Header : React.FC = () => {
   return (
     <header className="bg-blue-50">
       <div className="container flex justify-between items-center py-8">
@@ -14,3 +14,4 @@ export default function Header() {
     </header>
   )
 }
+export default Header
