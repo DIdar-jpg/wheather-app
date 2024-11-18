@@ -1,5 +1,5 @@
 import Header from './components/Layouts/Header/Header.tsx';
-import Footer from './components/Layouts/Footer/Footer.jsx';
+import Footer from './components/Layouts/Footer/Footer.tsx';
 import WheatherCard from './components/WeatherCard/WeatherCard.jsx';
 import WheatherDetail from './components/WheatherDetail.jsx';
 import { Suspense } from 'react'
@@ -29,17 +29,11 @@ function App() {
           <Footer/>
         </>
       )
-
-
-      
     }
   }
   return (
     <>
-      {
-        testFunc()
-      }
-
+      {testFunc()}
     </>
   );
 }
