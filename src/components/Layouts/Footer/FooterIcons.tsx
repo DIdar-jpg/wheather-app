@@ -46,7 +46,7 @@ const FooterIcons : React.FC = () => {
         }
     ]
     return (
-        <div className="middle">
+        <div className="middle fon">
             {icons.map( item => 
                 item.url && (
                     <a href={item.url} className="btn" key={item.key}>

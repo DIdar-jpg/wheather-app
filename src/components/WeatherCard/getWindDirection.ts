@@ -1,4 +1,4 @@
-export const getWindDirection = deg => { 
+export const getWindDirection = (deg: number): string => { 
     if (deg >= 0 && deg <= 30) return ' N' 
     else if (deg > 30 && deg <= 60) return ' NE' 
     else if (deg > 60 && deg <= 120) return ' E' 
@@ -8,4 +8,5 @@ export const getWindDirection = deg => {
     else if (deg > 240 && deg <= 300) return ' W'
     else if (deg > 300 && deg <= 330) return ' NW'
     else if (deg > 330 && deg <= 360) return ' N'
+    else return ''
 }

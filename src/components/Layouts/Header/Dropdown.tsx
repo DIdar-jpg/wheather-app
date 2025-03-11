@@ -36,7 +36,7 @@ import React from 'react';
 import { IoIosArrowForward } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
 import { useRecoilState } from 'recoil';
-import { languageState } from '../../Atoms';
+import { languageState } from '../../Atoms.ts';
 
 type Language = 'EN' | 'DE' | 'RU';
 

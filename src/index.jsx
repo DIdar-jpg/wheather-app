@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals'
 // Recoil
 import { RecoilRoot } from 'recoil'
 // Translation
-import './18n.js'
+import './18n.ts'
 // react-query
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'

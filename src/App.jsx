@@ -1,10 +1,10 @@
 import Header from './components/Layouts/Header/Header.tsx';
 import Footer from './components/Layouts/Footer/Footer.tsx';
-import WheatherCard from './components/WeatherCard/WeatherCard.jsx';
-import WheatherDetail from './components/WheatherDetail.jsx';
+import WheatherCard from './components/WeatherCard/WeatherCard.tsx';
+import WeatherDetail from './components/WeatherDetail.tsx';
 import { Suspense } from 'react'
 
-import { UseWeather } from './hooks/UseWeather.js'
+import { UseWeather } from './hooks/UseWeather.ts'
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
             data ? 
               <main className='container'>
                 <WheatherCard weather={data}/>
-                <WheatherDetail/>
+                <WeatherDetail/>
               </main>
             : null
           }

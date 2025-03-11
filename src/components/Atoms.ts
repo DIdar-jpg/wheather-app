@@ -4,15 +4,18 @@
 // Для чтения и записи в атом из компонента используется хук useRecoilState(). Это как useState(), но состояние может распределяться между несколькими компонентами
 // Компоненты, использующие состояние Recoil должны быть обернуты в RecoilRoot.
 
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 // Атомы создаются с помощью функции atom():
-export const languageState = atom(
+type Language = 'EN' | 'DE' | 'RU'
+type Settlement = string
+
+export const languageState = atom<Language>(
     {
         key: 'lang', // unique ID (with respect to other atoms/selectors)
         default: 'EN', // default value (aka initial value)
     }
 );
-export const settlementState = atom(
+export const settlementState = atom<Settlement>(
     {
         key: 'settlement', // unique ID (with respect to other atoms/selectors)
         default: 'London', // default value (aka initial value)

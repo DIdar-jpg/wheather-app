@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useTranslation } from 'react-i18next'
 import { useRecoilState } from 'recoil';
-import { settlementState } from '../../Atoms.js'
+import { settlementState } from '../../Atoms.ts'
 
 const Input: React.FC = () => {
 

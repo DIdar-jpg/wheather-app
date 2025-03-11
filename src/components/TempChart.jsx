@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
 
 import { useTranslation } from 'react-i18next'
-import { UseWeather } from '../hooks/UseWeather.js'
+import { UseWeather } from '../hooks/UseWeather.ts'
 
 export default function TempChart(){
 
@@ -12,7 +12,7 @@ export default function TempChart(){
 
   const { data } = UseWeather()
 
-  const [ windowSize, SetSize ] = useState(window.innerWidth )
+  const [ windowSize, SetSize ] = useState(window.innerWidth)
 
   const tempData = data.list.slice(0,30).map(item => {
     return {
@@ -41,7 +41,7 @@ export default function TempChart(){
 
   return (
     <>
-      <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap lg:w-[55%] lg:mb-0 xl:w-[58%]">
+      <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap">
         <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
         <Line
           type="line"
