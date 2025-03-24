@@ -1,5 +1,5 @@
 import React from 'react'
-import TempChart from "./TempChart.jsx";
+import TempChart from "./TempChart.tsx";
 
 const WeatherDetail: React.FC = () => {
   return (
