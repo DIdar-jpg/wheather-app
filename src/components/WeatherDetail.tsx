@@ -1,10 +1,15 @@
 import React from 'react'
 import TempChart from "./TempChart.tsx";
+import { useTranslation } from 'react-i18next';
 
+// import TempChart2 from './TempChart2.tsx'
 const WeatherDetail: React.FC = () => {
+  const [t] = useTranslation();
   return (
-    <section className='lg:flex justify-between'>
+    <section className=''>
+      <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
       <TempChart/>
+      {/* <TempChart2/> */}
     </section>
   )
 }
@@ -12,13 +17,3 @@ const WeatherDetail: React.FC = () => {
 export default WeatherDetail
 
 
-
-
-// export default function WheatherDetail() {
-//   return (
-//     <section className='lg:flex justify-between'>
-//       <TempChart/>
-//       <DaysForcast/>
-//     </section>
-//   )
-// }

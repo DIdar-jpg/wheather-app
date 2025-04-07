@@ -6,15 +6,11 @@ import {
   PointElement,
   LinearScale,
   CategoryScale,
-  Title,
-  Tooltip,
-  Legend
 } from 'chart.js';
 
-import { useTranslation } from 'react-i18next';
 import { UseWeather } from '../hooks/UseWeather.ts';
 
-ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
+ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale);
 
 interface TempData {
   temp: number;
@@ -22,18 +18,16 @@ interface TempData {
 }
 
 const TempChart: React.FC = () => { 
-  const [t] = useTranslation();
   const { data } = UseWeather();
   
   const [windowSize, setSize] = useState<number>(window.innerWidth);
-  const [chartHeigth, setChartHeight] = useState<number>(windowSize >= 1024 ? 400 : 200);
+  const [chartHeigth, setChartHeight] = useState<number>(windowSize >= 1024 ? 400 : 300);
 
   useEffect(() => {
     const handleResize = () => setSize(window.innerWidth);
     window.addEventListener('resize', handleResize);
     
-    windowSize >= 1024 ? setChartHeight(400) : setChartHeight(200) 
-    console.log(chartHeigth)
+    windowSize >= 1024 ? setChartHeight(400) : setChartHeight(300) 
     return () => window.removeEventListener('resize', handleResize);
   }, [windowSize]);
 
@@ -56,28 +50,28 @@ const TempChart: React.FC = () => {
   };
 
   return (
-    <div className="temp-chart mb-6 w-full h-auto overflow-x-scroll whitespace-nowrap">
-      <h2 className="text-2xl mb-5 font-medium">{t('temp_chart')}</h2>
+    <div className="temp-chart mb-6 w-full overflow-x-scroll" style={{ height: chartHeigth}}>
       <Line
         options={{
-          maintainAspectRatio: true,
-          responsive: false,
+          responsive: true, // включаем адаптивность
+          maintainAspectRatio: false, // позволяет нам контролировать высоту вручную
           plugins: {
             legend: { display: false },
           },
           scales: {
             x: { 
-              type: "category", // Явно указываем, что используем категориальную шкалу
+              type: "category",
               ticks: { font: { size: 14 } }
             },
-            y: { ticks: { font: { size: 14 } } }
+            y: { 
+              ticks: { font: { size: 14 } }
+            }
           }
         }}
-        width={1700}
-        height={chartHeigth}
-        // updateMode="resize"
+        height={chartHeigth} // мы оставляем высоту, она может быть разной для desktop/mobile
         data={lineChartData}
       />
+
     </div>
   );
 };

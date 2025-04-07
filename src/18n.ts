@@ -8,7 +8,7 @@ interface TranslationConfig {
     debug: boolean;
     detection: {
         order: string[];
-        cache: string[];
+    //     cache: string[];
     };
     interpolation: {
         escapeValue: boolean;
@@ -18,8 +18,8 @@ const config: TranslationConfig = {
     fallbackLng: 'en',
     debug: process.env.NODE_ENV === 'development',
     detection: {
-        order: ['queryString', 'cookie', 'localStorage', 'sessionStorage', 'navigator'],
-        cache: ['cookie', 'localStorage'],
+        order: ['queryString'],
+    //     cache: ['cookie', 'localStorage'],
     },
     interpolation: {
         escapeValue: false,
