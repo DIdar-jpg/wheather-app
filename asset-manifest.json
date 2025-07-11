@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/your-repo-name/static/css/main.f1d422a4.css",
-    "main.js": "/your-repo-name/static/js/main.f22e9568.js",
-    "static/media/Robotobold.ttf": "/your-repo-name/static/media/Robotobold.1ac02c026895c20df570.ttf",
-    "static/media/Robotomedium.ttf": "/your-repo-name/static/media/Robotomedium.704bba02385c62b5914c.ttf",
-    "static/media/Roboto.ttf": "/your-repo-name/static/media/Roboto.ecf539e1e3bc3e936f78.ttf",
-    "static/media/Robotobold.woff": "/your-repo-name/static/media/Robotobold.1e0c22679977ac02c8f6.woff",
-    "static/media/Robotomedium.woff": "/your-repo-name/static/media/Robotomedium.5673e7a07239f4785325.woff",
-    "static/media/Roboto.woff": "/your-repo-name/static/media/Roboto.59d18e163bfcd0607572.woff",
-    "static/media/Robotobold.woff2": "/your-repo-name/static/media/Robotobold.23c8ce07bd38f6723622.woff2",
-    "static/media/Robotomedium.woff2": "/your-repo-name/static/media/Robotomedium.76cb645b72a0083e239f.woff2",
-    "static/media/Roboto.woff2": "/your-repo-name/static/media/Roboto.806e04d8241d87f99a68.woff2",
-    "index.html": "/your-repo-name/index.html",
-    "static/media/getFetch.cjs": "/your-repo-name/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
-    "main.f1d422a4.css.map": "/your-repo-name/static/css/main.f1d422a4.css.map",
-    "main.f22e9568.js.map": "/your-repo-name/static/js/main.f22e9568.js.map"
+    "main.css": "/wheather-app/static/css/main.5bea8272.css",
+    "main.js": "/wheather-app/static/js/main.681a76c9.js",
+    "static/media/Robotobold.ttf": "/wheather-app/static/media/Robotobold.1ac02c026895c20df570.ttf",
+    "static/media/Robotomedium.ttf": "/wheather-app/static/media/Robotomedium.704bba02385c62b5914c.ttf",
+    "static/media/Roboto.ttf": "/wheather-app/static/media/Roboto.ecf539e1e3bc3e936f78.ttf",
+    "static/media/Robotobold.woff": "/wheather-app/static/media/Robotobold.1e0c22679977ac02c8f6.woff",
+    "static/media/Robotomedium.woff": "/wheather-app/static/media/Robotomedium.5673e7a07239f4785325.woff",
+    "static/media/Roboto.woff": "/wheather-app/static/media/Roboto.59d18e163bfcd0607572.woff",
+    "static/media/Robotobold.woff2": "/wheather-app/static/media/Robotobold.23c8ce07bd38f6723622.woff2",
+    "static/media/Robotomedium.woff2": "/wheather-app/static/media/Robotomedium.76cb645b72a0083e239f.woff2",
+    "static/media/Roboto.woff2": "/wheather-app/static/media/Roboto.806e04d8241d87f99a68.woff2",
+    "index.html": "/wheather-app/index.html",
+    "static/media/getFetch.cjs": "/wheather-app/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
+    "main.5bea8272.css.map": "/wheather-app/static/css/main.5bea8272.css.map",
+    "main.681a76c9.js.map": "/wheather-app/static/js/main.681a76c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1d422a4.css",
-    "static/js/main.f22e9568.js"
+    "static/css/main.5bea8272.css",
+    "static/js/main.681a76c9.js"
   ]
 }
