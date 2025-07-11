@@ -1,0 +1,19 @@
+{
+    "input_text": "Enter city name",
+    "search": "Search",
+
+    "feels_like": "Feels like",
+    "humidity": "Humidity",
+    "clouds": "Clouds",
+    "min_temp": "Min Temp",
+    "visibility": "Visibility",
+
+    "temp_chart": "Temperature Chart",
+    "days_frt": "days forecast",
+    
+
+    "keep_in_touch": "Let's keep in touch!",
+    "find_me": "Find me on any of these platforms, I respond 1-2 business days."
+
+
+}
