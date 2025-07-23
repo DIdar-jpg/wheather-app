@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wheather-app/static/css/main.5bea8272.css",
-    "main.js": "/wheather-app/static/js/main.4e688245.js",
+    "main.js": "/wheather-app/static/js/main.fbcdd089.js",
     "static/media/Robotobold.ttf": "/wheather-app/static/media/Robotobold.1ac02c026895c20df570.ttf",
     "static/media/Robotomedium.ttf": "/wheather-app/static/media/Robotomedium.704bba02385c62b5914c.ttf",
     "static/media/Roboto.ttf": "/wheather-app/static/media/Roboto.ecf539e1e3bc3e936f78.ttf",
@@ -14,10 +14,10 @@
     "index.html": "/wheather-app/index.html",
     "static/media/getFetch.cjs": "/wheather-app/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
     "main.5bea8272.css.map": "/wheather-app/static/css/main.5bea8272.css.map",
-    "main.4e688245.js.map": "/wheather-app/static/js/main.4e688245.js.map"
+    "main.fbcdd089.js.map": "/wheather-app/static/js/main.fbcdd089.js.map"
   },
   "entrypoints": [
     "static/css/main.5bea8272.css",
-    "static/js/main.4e688245.js"
+    "static/js/main.fbcdd089.js"
   ]
 }
