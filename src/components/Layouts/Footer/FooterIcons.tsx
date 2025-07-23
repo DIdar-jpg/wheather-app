@@ -34,11 +34,11 @@ const FooterIcons : React.FC = () => {
             key:'instagram',
             url: process.env.REACT_APP_INSTAGRAM_URL
         }, 
-        {
-            icon: <FaWhatsapp />, 
-            key:'whatsUp',
-            url: process.env.REACT_APP_WHATSAPP_URL
-        }, 
+        // {
+        //     icon: <FaWhatsapp />, 
+        //     key:'whatsUp',
+        //     url: process.env.REACT_APP_WHATSAPP_URL
+        // }, 
         {
             icon: <BiLogoGmail />,
             key:'gmail',
